@@ -7,9 +7,9 @@ require ('includes/constants.php');
 if(isset($_POST['register'])) {
 
     //Si tous les champs ont été remplis
-    if (not_empty(['name', 'pseudo', 'email', 'password', 'password_confirm'])) {
+    if(not_empty(['name', 'pseudo', 'email', 'password', 'password_confirm'])){
 
-        $errors = [];  //Tableau contenant l'ensemble des erreurs
+        $errors = [];
 
         extract($_POST);
 
@@ -17,7 +17,7 @@ if(isset($_POST['register'])) {
             $errors[] = "Pseudo trop court (Min 3 caractères)";
         }
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = "Adresse email invalide";
         }
 

@@ -5,6 +5,16 @@
     <div class="container">
     <h1>Deviens membre dès à présent ;)</h1>
 
+        <?php
+            if (isset($errors) && count($errors) != 0){
+                echo '<div class="bg-danger">';
+                    foreach($errors as $error){
+                        echo $error.'<br/>';
+                    }
+                echo '</div>';
+            }
+        ?>
+
         <form method="post" class="well col-md-6" autocomplete="off">
 
             <!-- Name Field -->
@@ -34,10 +44,10 @@
             <!-- Password Confirmation Field -->
             <div class="form-group">
                 <label class="control-label" for="password_confirm">Confirmer votre mot de passe:</label>
-                <input type="text" class="form-control" id="passworword_confirm" name="password_confirm" required="required"/>
+                <input type="text" class="form-control" id="password_confirm" name="password_confirm" required="required"/>
             </div>
 
-            <input type="submit" class="btn btn-primary" value="inscription" name="register"/>
+            <input type="submit" class="btn btn-primary" value="Inscription" name="register"/>
         </form>
     </div><!-- /.container -->
 </div>

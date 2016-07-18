@@ -1,6 +1,6 @@
 <?php
 
-if(defined('not_empty')){
+if(!function_exists('not_empty')){
     function not_empty($fields = []){
         if(count($fields) != 0){
             foreach($fields as $field){
@@ -8,7 +8,6 @@ if(defined('not_empty')){
                     return false;
                 }
             }
-
             return true;
         }
     }
@@ -28,6 +27,4 @@ if(!function_exists('is_already_in_use')){
     }
 }
 
-function not_empty(){
-
-}
+?>
