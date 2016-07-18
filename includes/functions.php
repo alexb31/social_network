@@ -13,7 +13,21 @@ if(defined('not_empty')){
         }
     }
 }
+if(!function_exists('is_already_in_use')){
+    function is_already_in_use($field, $value, $table){
+    global $db;
 
-function not_empty[]{
+        $q = $db->prepare("SELECT id FROM $table WHERE $field = ?");
+        $q->execute([$value]);
+
+        $count = $q->rowCount();
+
+        $q->closeCursor();
+
+        return $count;
+    }
+}
+
+function not_empty(){
 
 }

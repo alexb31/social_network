@@ -1,12 +1,11 @@
 <?php $title ="Inscription"; ?>
-<?php include('includes/constants.php'); ?>
 <?php include('partials/_header.php'); ?>
 
 <div id="main-content">
     <div class="container">
     <h1>Deviens membre dès à présent ;)</h1>
 
-        <form method="post" class="well col-md-6">
+        <form method="post" class="well col-md-6" autocomplete="off">
 
             <!-- Name Field -->
             <div class="form-group">
