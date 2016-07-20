@@ -1,4 +1,5 @@
 <?php
+session_start();
 require ('config/database.php');
 require ('includes/functions.php');
 require ('includes/constants.php');
@@ -53,7 +54,8 @@ if(isset($_POST['register'])) {
             mail($to, $subject, $content, $headers);
 
             //Informer utilisateur
-            echo "Mail d'activation envoye!";
+            set_flash("Mail d'activation envoye!", 'success');
+            redirect('index.php');
 
         }
 

@@ -3,17 +3,9 @@
 
 <div id="main-content">
     <div class="container">
-    <h1>Deviens membre dès à présent ;)</h1>
+    <h1 class="lead">Deviens membre dès à présent ;)</h1>
 
-        <?php
-            if (isset($errors) && count($errors) != 0){
-                echo '<div class="bg-danger">';
-                    foreach($errors as $error){
-                        echo $error.'<br/>';
-                    }
-                echo '</div>';
-            }
-        ?>
+        <?php include('partials/_errors.php')?>
 
         <form method="post" class="well col-md-6" autocomplete="off">
 
